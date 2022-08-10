@@ -26,11 +26,11 @@ function MapBox({data,port}) {
     mapboxAccessToken={process.env.mapBoxKey}
     onMove={next => setViewport({latitude:next.viewState.latitude, longitude:next.viewState.longitude, zoom:next.viewState.zoom})}
   >
-    <Marker longitude={myLocation.longitude} latitude={myLocation.latitude} ><UserIcon className="text-orange-500 w-7 h-10 " /></Marker>
+    <Marker longitude={myLocation.longitude} latitude={myLocation.latitude} ><LocationMarkerIcon className="text-orange-500 w-7 h-10 " /></Marker>
     {
         data.map(val=> {
-          if(val.latitude===port.latitude && val.longitude===port.longitude) return(<Marker longitude={val.longitude} latitude={val.latitude} ><LocationMarkerIcon className="text-red-500 w-7 h-10 animate-bounce" /></Marker>)
-          return(<Marker longitude={val.longitude} latitude={val.latitude} ><LocationMarkerIcon className="text-blue-500 w-7 h-10" /></Marker>)
+          if(val.latitude===port.latitude && val.longitude===port.longitude) return(<Marker key={val.latitude} longitude={val.longitude} latitude={val.latitude} ><LocationMarkerIcon className="text-red-500 w-7 h-10 animate-bounce" /></Marker>)
+          return(<Marker key={val.latitude} longitude={val.longitude} latitude={val.latitude} ><LocationMarkerIcon className="text-blue-500 w-7 h-10" /></Marker>)
         })
     }
   </Map>

@@ -2,8 +2,6 @@ import React, { useEffect, useState } from 'react'
 import Image from 'next/image'
 import {LocationMarkerIcon} from '@heroicons/react/solid'
 function Panel({id,name,longitude,latitude,image,types,location,updatePort,updateIdActive,idActive}) {
-    
-    console.log((id===idActive)?true:false)
   return (
     <div className={`rounded-tl-lg rounded-tr-lg flex flex-col border-b-2 border-gray-400 p-2 cursor-pointer ${(id===idActive)?'bg-blue-100':'bg-none'}`} onClick={()=>{
         updateIdActive(id)

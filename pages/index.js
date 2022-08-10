@@ -21,7 +21,7 @@ export default function Home({data}) {
     <div className="bg-white w-full h-screen flex justify-between divide-x-2">
       <section className='w-[40vw] p-10 space-y-7 overflow-y-auto'>
         {
-          data?.companies.map(val=> <Panel updateIdActive={updateIdActive} updatePort={updatePort} idActive={idActive} id={val.key} name={val.name} longitude={val.longitude} latitude={val.latitude} image={val.image} types={val.types} location={val.location}/>)
+          data?.companies.map(val=> <Panel key={val.key} updateIdActive={updateIdActive} updatePort={updatePort} idActive={idActive} id={val.key} name={val.name} longitude={val.longitude} latitude={val.latitude} image={val.image} types={val.types} location={val.location}/>)
         }
       </section>
       <div className='w-full h-auto'>
