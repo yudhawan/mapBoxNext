@@ -31,7 +31,7 @@ export default function Home({data}) {
   )
 }
 export async function getServerSideProps() {
-  const res = await fetch(`https://map-box-next-61pboh5pz-yudhawan.vercel.app/api/map`)
+  const res = await fetch(`https://localhost/api/map`)
   const data = await res.json()
   return { props: { data } }
 }
